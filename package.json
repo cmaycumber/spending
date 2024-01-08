@@ -1,22 +1,37 @@
 {
 	"name": "spending",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"description": "Calculate your software spending",
-	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			}
+		},
+		"./package.json": "./package.json"
+	},
+	"main": "./dist/index.js",
+	"files": ["dist"],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/cmaycumber/spending.git"
 	},
 	"author": "Chad Maycumber <chad.maycumber11@gmail.com>",
 	"license": "MIT",
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"publish:local": "npx yalc push --replace  --sig"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.4.1",
-		"typescript": "^5.3.3"
-	},
-	"scripts": {
-		"start": "node dist/index.js",
-		"build": "tsc",
-		"dev": "tsc -W"
+		"typescript": "^5.3.3",
+		"tsup": "^8.0.1"
 	},
 	"packageManager": "yarn@4.0.2"
 }

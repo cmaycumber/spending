@@ -1,5 +1,3 @@
-import { APIResource } from "spending/resource";
-
 const models = {
 	"gpt-3.5-turbo-1106": {
 		inputTokenPrice: 0.001 / 1000,
@@ -9,7 +7,7 @@ const models = {
 
 type Model = keyof typeof models;
 
-export class OpenAI extends APIResource {
+export const openai = {
 	/** Calculate the cost of a given input */
 	cost(params: {
 		model: Model;
@@ -34,5 +32,5 @@ export class OpenAI extends APIResource {
 			outputCost,
 			totalCost: inputCost + outputCost,
 		};
-	}
-}
+	},
+};

@@ -1,5 +1,5 @@
-import * as Resources from "./openai";
+import { openai } from "./openai";
 
-export class Spending {
-	openai: Resources.OpenAI = new Resources.OpenAI(this);
-}
+export { openai };
+
+// TODO: Create a wrapper that wraps requests and automatically tracks spending
