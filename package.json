@@ -1,0 +1,22 @@
+{
+	"name": "spending",
+	"version": "0.0.1",
+	"description": "Calculate your software spending",
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cmaycumber/spending.git"
+	},
+	"author": "Chad Maycumber <chad.maycumber11@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "^1.4.1",
+		"typescript": "^5.3.3"
+	},
+	"scripts": {
+		"start": "node dist/index.js",
+		"build": "tsc",
+		"dev": "tsc -W"
+	},
+	"packageManager": "yarn@4.0.2"
+}
